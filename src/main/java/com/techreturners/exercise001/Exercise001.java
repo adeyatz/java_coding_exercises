@@ -4,12 +4,11 @@ import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
-    		return word.substring(0,1).toUpperCase().concat(word.substring(1));
+    	return word.substring(0,1).toUpperCase().concat(word.substring(1));
     }
 
     public String generateInitials(String firstName, String lastName) {
-        // Add your code here
-        return "";
+        return firstName.substring(0,1).concat(".").concat(lastName.substring(0,1));
     }
 
     public double addVat(double originalPrice, double vatRate) {
