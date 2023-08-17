@@ -6,11 +6,14 @@ import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
-    	return word.substring(0,1).toUpperCase().concat(word.substring(1));
+    	return word.substring(0,1).toUpperCase()
+    			.concat(word.substring(1));
     }
 
     public String generateInitials(String firstName, String lastName) {
-        return firstName.substring(0,1).concat(".").concat(lastName.substring(0,1));
+        return firstName.substring(0,1)
+        		.concat(".")
+        		.concat(lastName.substring(0,1));
     }
 
     public double addVat(double originalPrice, double vatRate) {
@@ -23,7 +26,14 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+    	int linuxUsers = 0;
+    	
+    	for (User u : users)
+    	{
+    		if (u.getType().compareTo("Linux") == 0)
+    			linuxUsers++;
+    	}
+    	return linuxUsers;	
+    	
     }
 }
