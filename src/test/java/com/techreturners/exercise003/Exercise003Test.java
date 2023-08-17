@@ -24,7 +24,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkGetIceCreamCodeForMangoSorbet() {
         String iceCreamFlavour = "Mango Sorbet";
@@ -33,7 +32,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkGetIceCreamCodeForRaspberryRipple() {
         String iceCreamFlavour = "Raspberry Ripple";
@@ -42,7 +40,6 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    @Disabled("You can remove this @Disabled annotation to run the test")
     @Test
     public void checkPickMultipleIceCreamFlavours() {
 
@@ -50,6 +47,38 @@ public class Exercise003Test {
 
         assertArrayEquals(expected, ex003.iceCreamFlavours());
     }
+    
+
+    
+    @Test
+    public void checkGetIceCreamCodeForRaspberry() {
+        String iceCreamFlavour = "Raspberry";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+    
+   
+    
+    @Test
+    public void checkGetIceCreamCodeForUnknown() {
+        String iceCreamFlavour = "Triple cornet with flake, chocolate sauce and sprinkles";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+    
+    
+    
+    @Test
+    public void checkGetIceCreamCodeForEmptyString() {
+        String iceCreamFlavour = "";
+        int expected = -1;
+
+        assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
+    }
+    
+    
 
 
 }
