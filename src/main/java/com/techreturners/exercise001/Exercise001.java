@@ -2,10 +2,14 @@ package com.techreturners.exercise001;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.InvalidParameterException;
 import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
+    	if (word.length() < 2)
+    		throw new InvalidParameterException("word must be at least 2 chars long");
+    	
     	return word.substring(0,1).toUpperCase()
     			.concat(word.substring(1));
     }
