@@ -8,6 +8,8 @@ import java.time.Month;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Exercise004Test {
+	
+	final long oneGigaSecond = 1000000000;
 
     @Test
     public void checkGetDateTimeWhenDateIsSpecified() {
@@ -37,5 +39,58 @@ public class Exercise004Test {
 
         assertEquals(expected, ex004.getDateTime());
     }
-     
+
+    
+    
+    @Test
+    public void checkGetDateTimeNow() {
+
+        LocalDateTime now = LocalDateTime.now();
+        
+    	Exercise004 ex004 = new Exercise004(now);
+        LocalDateTime expected = now.plusSeconds(oneGigaSecond);
+        assertEquals(expected, ex004.getDateTime());
+    }
+
+
+    @Test
+    public void checkGetDateNow() {
+
+        LocalDate now = LocalDate.now();
+        
+    	Exercise004 ex004 = new Exercise004(now);
+        LocalDateTime expected = now.atStartOfDay().plusSeconds(oneGigaSecond); 
+        assertEquals(expected, ex004.getDateTime());
+    }
+    
+    
+    
+    @Test
+    public void checkConstructorsWithDateVsDateTime() {
+
+        Exercise004 dateTime = new Exercise004(LocalDateTime.of(2023, Month.AUGUST, 17, 00, 00, 00, 0));
+        Exercise004 date = new Exercise004(LocalDate.of(2023, Month.AUGUST, 17));
+
+        assertEquals(date.getDateTime(), dateTime.getDateTime());
+    }
+    
+
+    @Test
+    public void checkStartOfJavaDate() {
+
+        Exercise004 date = new Exercise004(LocalDate.MIN);
+
+        assertEquals(LocalDate.MIN.atStartOfDay().plusSeconds(oneGigaSecond) , date.getDateTime());
+    }
+        
+
+    @Test
+    public void checkStartOfJavaTime() {
+
+        Exercise004 date = new Exercise004(LocalDateTime.MIN);
+
+        assertEquals(LocalDateTime.MIN.plusSeconds(oneGigaSecond) , date.getDateTime());
+    }
+
+    
 }
