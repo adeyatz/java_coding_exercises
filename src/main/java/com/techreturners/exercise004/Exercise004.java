@@ -10,20 +10,13 @@ public class Exercise004 {
 
 
     public Exercise004(LocalDate date) {
-        this.dateTime = date.atStartOfDay();
-        addTimeInSeconds(oneGigaSecond);
+        this.dateTime = date.atStartOfDay().plusSeconds(oneGigaSecond);
     }
 
     public Exercise004(LocalDateTime dateTime) {
-        this.dateTime = dateTime;
-        addTimeInSeconds(oneGigaSecond);
+        this.dateTime = dateTime.plusSeconds(oneGigaSecond);
     }
     
-    
-    public void addTimeInSeconds (long secondsToAdd) {
-    	dateTime = dateTime.plusSeconds(secondsToAdd);
-    }
-
     
     public LocalDateTime getDateTime() {
         return dateTime;

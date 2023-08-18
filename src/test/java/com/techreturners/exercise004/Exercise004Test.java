@@ -79,7 +79,6 @@ public class Exercise004Test {
     public void checkStartOfJavaDate() {
 
         Exercise004 date = new Exercise004(LocalDate.MIN);
-
         assertEquals(LocalDate.MIN.atStartOfDay().plusSeconds(oneGigaSecond) , date.getDateTime());
     }
         
